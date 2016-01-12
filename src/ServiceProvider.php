@@ -26,7 +26,8 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/mysql-to-sqlite.php', 'mysql-to-sqlite'
+            __DIR__ . '/../config/mysql-to-sqlite.php',
+            'mysql-to-sqlite'
         );
 
         $this->commands([

@@ -40,7 +40,11 @@ class ConvertToSqlite extends Command
         $this->config = $config;
 
         // apply the default conversion configuration to the command line path
-        $this->signature = str_replace('conversion=default', 'conversion='.$config->defaultConversion(), $this->signature);
+        $this->signature = str_replace(
+            'conversion=default',
+            'conversion='.$config->defaultConversion(),
+            $this->signature
+        );
 
         $this->outputFilter = $outputFilter;
         $this->commandStringBuilder = $commandStringBuilder;
