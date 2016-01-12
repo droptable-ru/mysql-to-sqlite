@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1dfb0bb32365245c02cf0e7a1fc21483",
+    "hash": "4f393b3ec36a0a6429b6a74c4b8fe7a9",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -75,16 +75,16 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v5.2.6",
+            "version": "v5.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "c0c4da8596cefe7026f913de2e806dc8fcf7e6f7"
+                "reference": "19b8b641fd7471b50b116d4b8b1332ed756bc4f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/c0c4da8596cefe7026f913de2e806dc8fcf7e6f7",
-                "reference": "c0c4da8596cefe7026f913de2e806dc8fcf7e6f7",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/19b8b641fd7471b50b116d4b8b1332ed756bc4f9",
+                "reference": "19b8b641fd7471b50b116d4b8b1332ed756bc4f9",
                 "shasum": ""
             },
             "require": {
@@ -122,11 +122,11 @@
             ],
             "description": "The Illuminate Console package.",
             "homepage": "http://laravel.com",
-            "time": "2015-12-29 14:47:47"
+            "time": "2016-01-05 16:02:40"
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.2.6",
+            "version": "v5.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -168,16 +168,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v5.2.6",
+            "version": "v5.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "7be481e742f527a5c4bc84e967bd06a31f50ec0e"
+                "reference": "6d8dec02825299b0ad47712564e9d33104e148c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/7be481e742f527a5c4bc84e967bd06a31f50ec0e",
-                "reference": "7be481e742f527a5c4bc84e967bd06a31f50ec0e",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/6d8dec02825299b0ad47712564e9d33104e148c4",
+                "reference": "6d8dec02825299b0ad47712564e9d33104e148c4",
                 "shasum": ""
             },
             "require": {
@@ -220,7 +220,7 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "http://laravel.com",
-            "time": "2015-12-29 14:47:47"
+            "time": "2016-01-07 11:02:28"
         },
         {
             "name": "nesbot/carbon",
@@ -390,25 +390,25 @@
         },
         {
             "name": "symfony/process",
-            "version": "v3.0.1",
+            "version": "v2.7.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "f4794f1d00f0746621be3020ffbd8c5e0b217ee3"
+                "reference": "a3fb8f4c4afc4f1b285de5df07e568602934f525"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/f4794f1d00f0746621be3020ffbd8c5e0b217ee3",
-                "reference": "f4794f1d00f0746621be3020ffbd8c5e0b217ee3",
+                "url": "https://api.github.com/repos/symfony/process/zipball/a3fb8f4c4afc4f1b285de5df07e568602934f525",
+                "reference": "a3fb8f4c4afc4f1b285de5df07e568602934f525",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": ">=5.3.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "2.7-dev"
                 }
             },
             "autoload": {
@@ -435,7 +435,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2015-12-23 11:04:02"
+            "time": "2015-12-23 11:03:39"
         },
         {
             "name": "symfony/translation",
@@ -1205,12 +1205,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "38a34b88c3c94f5ad9e2c4e25d9c8ca5fabdceeb"
+                "reference": "a774edeee22c8c3db4e7dafdcedc4b2a3154eb8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/38a34b88c3c94f5ad9e2c4e25d9c8ca5fabdceeb",
-                "reference": "38a34b88c3c94f5ad9e2c4e25d9c8ca5fabdceeb",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/a774edeee22c8c3db4e7dafdcedc4b2a3154eb8f",
+                "reference": "a774edeee22c8c3db4e7dafdcedc4b2a3154eb8f",
                 "shasum": ""
             },
             "require": {
@@ -1260,7 +1260,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2016-01-03 15:35:40"
+            "time": "2016-01-07 13:39:00"
         },
         {
             "name": "symfony/yaml",
