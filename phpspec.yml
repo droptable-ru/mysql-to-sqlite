@@ -1,0 +1,6 @@
+formatter.name: pretty
+suites:
+    main:
+        namespace: MysqlToSqlite
+        psr4_prefix: MysqlToSqlite
+        src_path: src

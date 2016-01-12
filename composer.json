@@ -1,0 +1,28 @@
+{
+    "name": "realpagelouisville/mysql-to-sqlite",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ben Kuhl",
+            "email": "benkuhl@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MysqlToSqlite\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.6.0",
+        "illuminate/support": ">=5.0",
+        "illuminate/console": ">=5.0",
+        "illuminate/contracts": ">=5.0",
+        "symfony/process": "3.*"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.3",
+        "symfony/var-dumper": "dev-master"
+    },
+    "minimum-stability": "stable"
+}
