@@ -9,4 +9,6 @@ before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction
 
-script: vendor/bin/phpspec run -v
+script:
+  - vendor/bin/phpcs --ignore=vendor --standard=psr2 .
+  - vendor/bin/phpspec run -v

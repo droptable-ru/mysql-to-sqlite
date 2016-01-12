@@ -6,5 +6,4 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class SqliteConversionFailed extends ProcessFailedException
 {
-
 }
