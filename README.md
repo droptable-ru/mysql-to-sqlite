@@ -43,5 +43,5 @@ cp vendor/realpagelouisville/mysql-to-sqlite/config/mysql-to-sqlite.php config/m
 You're probably only using this for development, so we'll use `require-dev`:
 
 ```
-composer require --dev realpagelouisville/mysql-to-sqlite:~1.0
+composer require --dev realpagelouisville/mysql-to-sqlite:~1.*
 ```
