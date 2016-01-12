@@ -6,7 +6,7 @@ This is a Laravel wrapper for [esperlu's mysql2sqlite.sh](https://gist.github.co
 * [Configuration](#configuration)
 * [Installation](#installation)
 
-[![Latest Stable Version](https://poser.pugx.org/realpagelouisville/mysql-to-sqlite/v/stable.png)](https://packagist.org/packages/realpagelouisville/mysql-to-sqlite) [![Total Downloads](https://poser.pugx.org/realpagelouisville/mysql-to-sqlite/downloads.png)](https://packagist.org/packages/realpagelouisville/mysql-to-sqlite) [![Build Status](https://travis-ci.org/realpagelouisville/mysql-to-sqlite.png?branch=master)](https://travis-ci.org/realpagelouisville/mysql-to-sqlite)
+[![Latest Stable Version](https://poser.pugx.org/realpagelouisville/mysql-to-sqlite/v/stable.png)](https://packagist.org/packages/realpagelouisville/mysql-to-sqlite) [![Total Downloads](https://poser.pugx.org/realpagelouisville/mysql-to-sqlite/downloads.png)](https://packagist.org/packages/realpagelouisville/mysql-to-sqlite) [![Build Status](https://travis-ci.org/RealpageLouisville/mysql-to-sqlite.svg?branch=master)](https://travis-ci.org/realpagelouisville/mysql-to-sqlite)
 
 # Usage
 
