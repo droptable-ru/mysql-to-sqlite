@@ -44,7 +44,7 @@ cp vendor/realpagelouisville/mysql-to-sqlite/config/mysql-to-sqlite.php config/m
 
 Add the following to `app/Providers/AppServiceProvider`
 
-```
+```php
 public function register()
 {
     // Class may not be there if it was loaded as a dev dependency
@@ -56,7 +56,7 @@ public function register()
 
 **For Lumen**
  
- ```
+ ```php
  // Class may not be there if it was loaded as a dev dependency
  if(class_exists('MysqlToSqlite\ServiceProvider')) {
      $app->register(MysqlToSqlite\ServiceProvider::class);
