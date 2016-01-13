@@ -42,7 +42,7 @@ cp vendor/realpagelouisville/mysql-to-sqlite/config/mysql-to-sqlite.php config/m
 
 **For Laravel**
 
-Add the following to `app/Providers/AppServiceProvider`
+Add the following to `app/Providers/AppServiceProvider.php`
 
 ```php
 public function register()
@@ -55,6 +55,8 @@ public function register()
 ```
 
 **For Lumen**
+
+Add the following to `app/bootstrap/app.php`
  
  ```php
  // Class may not be there if it was loaded as a dev dependency
