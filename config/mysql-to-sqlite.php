@@ -40,9 +40,10 @@ return [
 
         // A name for this conversion, anything you'd like
         'default' => [
-            // The Laravel database connection to use
 
+            // The Laravel database connection to use
             'connection' => 'mysql',
+
             // Which tables to backup, either "*" or make this
             // an array of table names
             'tables' => '*',

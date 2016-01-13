@@ -12,31 +12,56 @@ This is a Laravel wrapper for [esperlu's mysql2sqlite.sh](https://gist.github.co
 
 You can run the default configuration
 
-```php
+```
 php artisan db:mysql-to-sqlite
 ```
 
 Running a single, default conversion configuration:
 
-```php
-php artisan db:mysql-to-sqlite my-conversion-configuration
+```
+php artisan db:mysql-to-sqlite customerServiceDBForCI
 ```
 
 # Configuration
 
-To publish the config...
+ * Publish the config...
 
 **For Laravel**
 
-```php
+```
 php artisan vendor:publish --provider="MysqlToSqlite\ServiceProvider"
 ```
 
 **For Lumen**
 
-```php
+```
 cp vendor/realpagelouisville/mysql-to-sqlite/config/mysql-to-sqlite.php config/mysql-to-sqlite.php
 ```
+
+ * Register the service provider
+
+**For Laravel**
+
+Add the following to `app/Providers/AppServiceProvider`
+
+```
+public function register()
+{
+    // Class may not be there if it was loaded as a dev dependency
+    if (class_exists('MysqlToSqlite\ServiceProvider')) {
+        $this->app->register(MysqlToSqlite\ServiceProvider::class),
+    }
+}
+```
+
+**For Lumen**
+ 
+ ```
+ // Class may not be there if it was loaded as a dev dependency
+ if(class_exists('MysqlToSqlite\ServiceProvider')) {
+     $app->register(MysqlToSqlite\ServiceProvider::class);
+ }
+ ```
 
 # Installation
 

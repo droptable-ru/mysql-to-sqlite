@@ -34,6 +34,11 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             ConvertToSqlite::class,
         ]);
 
+        // Load the config file for lumen
+        if (method_exists($this->app, 'configure')) {
+            $this->app->configure('mysql-to-sqlite');
+        }
+
         $this->app->bind(ConversionConfig::class, function ($app) {
             $config = $app['config']['mysql-to-sqlite'];
             return new ConversionConfig($config, $app->make(Repository::class));
