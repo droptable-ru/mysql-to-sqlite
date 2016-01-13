@@ -131,7 +131,9 @@ class ConversionConfig
      */
     public function outputPath()
     {
-        return $this->app->basePath().DIRECTORY_SEPARATOR.trim($this->conversionConfig['outputPath'], DIRECTORY_SEPARATOR);
+        return
+            $this->app->basePath().DIRECTORY_SEPARATOR.
+            trim($this->conversionConfig['outputPath'], DIRECTORY_SEPARATOR);
     }
 
     /**
