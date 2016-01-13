@@ -28,19 +28,11 @@ php artisan db:mysql-to-sqlite customerServiceDBForCI
 
 **For Laravel**
 
+Publish the config...
+
 ```
 php artisan vendor:publish --provider="MysqlToSqlite\ServiceProvider"
 ```
-
-**For Lumen**
-
-```
-cp vendor/realpagelouisville/mysql-to-sqlite/config/mysql-to-sqlite.php config/mysql-to-sqlite.php
-```
-
- * Register the service provider
-
-**For Laravel**
 
 Add the following to `app/Providers/AppServiceProvider.php`
 
@@ -55,6 +47,12 @@ public function register()
 ```
 
 **For Lumen**
+
+Publish the config...
+
+```
+cp vendor/realpagelouisville/mysql-to-sqlite/config/mysql-to-sqlite.php config/mysql-to-sqlite.php
+```
 
 Add the following to `app/bootstrap/app.php`
  
