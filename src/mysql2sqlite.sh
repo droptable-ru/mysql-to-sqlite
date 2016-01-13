@@ -65,7 +65,11 @@ inTrigger != 0 { print; next }
 
 # Print all fields definition lines except the `KEY` lines.
 /^  / && !/^(  KEY|\);)/ {
-	gsub( /AUTO_INCREMENT|auto_increment/, "" )
+
+    # https://gist.github.com/esperlu/943776#gistcomment-1243384
+    gsub( /int\([0-9]{1,2}\)/, "INTEGER" )
+
+    gsub( /AUTO_INCREMENT|auto_increment/, "" )
 	gsub( /(CHARACTER SET|character set) [^ ]+ /, "" )
 	gsub( /DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP|default current_timestamp on update current_timestamp/, "" )
 	gsub( /(COLLATE|collate) [^ ]+ /, "" )

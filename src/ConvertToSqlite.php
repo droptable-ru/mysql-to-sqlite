@@ -60,8 +60,8 @@ class ConvertToSqlite extends Command
     public function handle()
     {
         $this->config->load($this->argument('conversion'));
-        $command = $this->commandStringBuilder->build($this->config, $this->argument('conversion'));
-        $outputPath = $this->commandStringBuilder->getOutputPath($this->argument('conversion'));
+        $command = $this->commandStringBuilder->build($this->config);
+        $outputPath = $this->config->outputPath();
 
         if (file_exists($outputPath)) {
             @unlink($outputPath);

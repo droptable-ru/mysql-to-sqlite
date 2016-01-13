@@ -8,18 +8,7 @@ use PhpSpec\ObjectBehavior;
 
 class CommandStringBuilderSpec extends ObjectBehavior
 {
-
-    protected $basePath = '/path/to/dump';
-
     protected $config = null;
-
-    public function let($app)
-    {
-        $app->beADoubleOf(Application::class);
-        $app->basePath()->willReturn($this->basePath);
-
-        $this->beConstructedWith($app);
-    }
 
     function it_includes_executable_and_auth_and_database_in_command($config)
     {
@@ -29,7 +18,8 @@ class CommandStringBuilderSpec extends ObjectBehavior
             'user' => 'myUser',
             'port' => 'myPort',
             'password' => 'myPassword',
-            'database' => 'myDatabase'
+            'database' => 'myDatabase',
+            'outputPath' => '/path/to/output.sqlite'
         ];
         $config->beADoubleOf(ConversionConfig::class);
         $config->converterExecutable()->willReturn($exampleConfig['executable']);
@@ -40,6 +30,7 @@ class CommandStringBuilderSpec extends ObjectBehavior
         $config->database()->willReturn($exampleConfig['database']);
         $config->hasConfiguredTables()->willReturn(false);
         $config->extraOptions()->willReturn([]);
+        $config->outputPath()->willReturn($exampleConfig['outputPath']);
         $dumpName = uniqid();
 
         // This also natively asserts that no table names were
@@ -51,7 +42,7 @@ class CommandStringBuilderSpec extends ObjectBehavior
                 '-p'. $exampleConfig['password'],
                 '-P '. $exampleConfig['port'],
                 $exampleConfig['database']
-            ]).' | sqlite3 '.$this->basePath.DIRECTORY_SEPARATOR.'storage'.DIRECTORY_SEPARATOR.$dumpName.'.sqlite3';
+            ]).' | sqlite3 '.$exampleConfig['outputPath'];
 
         $this->build($config, $dumpName)->shouldReturn($exampleCommand);
     }
@@ -73,6 +64,7 @@ class CommandStringBuilderSpec extends ObjectBehavior
         $config->hasConfiguredTables()->willReturn(true);
         $config->tables()->willReturn($tables);
         $config->extraOptions()->willReturn([]);
+        $config->outputPath()->willReturn('');
 
         // verify table names are listed between the database
         // and the pipe
@@ -98,6 +90,7 @@ class CommandStringBuilderSpec extends ObjectBehavior
         $config->database()->willReturn($databaseName);
         $config->hasConfiguredTables()->willReturn(false);
         $config->extraOptions()->willReturn($options);
+        $config->outputPath()->willReturn('');
 
         // verify table names are listed between the database
         // and the pipe

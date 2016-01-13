@@ -6,20 +6,13 @@ use Illuminate\Contracts\Foundation\Application;
 
 class CommandStringBuilder
 {
-    /** @var Application */
-    protected $app;
-
-    public function __construct(Application $app)
-    {
-        $this->app = $app;
-    }
 
     /**
      * Build the command string from the configuration
      *
      * @return string
      */
-    public function build(ConversionConfig $config, $dumpName)
+    public function build(ConversionConfig $config)
     {
         $command = [$config->converterExecutable()];
         $command[] = '-h '.$config->host();
@@ -42,17 +35,8 @@ class CommandStringBuilder
             }
         }
 
-        $command[] = '| sqlite3 '.$this->getOutputPath($dumpName);
+        $command[] = '| sqlite3 '.$config->outputPath();
 
         return implode(' ', $command);
-    }
-
-    /**
-     * @param $dumpName
-     * @return string
-     */
-    public function getOutputPath($dumpName)
-    {
-        return $this->app->basePath().DIRECTORY_SEPARATOR.'storage'.DIRECTORY_SEPARATOR.$dumpName.'.sqlite3';
     }
 }

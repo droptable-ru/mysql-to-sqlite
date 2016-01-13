@@ -4,6 +4,7 @@ namespace MysqlToSqlite;
 
 use Config;
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\Contracts\Foundation\Application;
 
 class ConversionConfig
 {
@@ -16,10 +17,14 @@ class ConversionConfig
     /** Repository */
     protected $configRepository;
 
-    public function __construct(array $config, Repository $configRepository)
+    /** Application */
+    protected $app;
+
+    public function __construct(array $config, Repository $configRepository, Application $app)
     {
         $this->config = $config;
         $this->configRepository = $configRepository;
+        $this->app = $app;
     }
 
     /**
@@ -59,7 +64,6 @@ class ConversionConfig
     }
 
     /**
-     * @param $connection
      * @return string
      */
     public function host()
@@ -68,7 +72,6 @@ class ConversionConfig
     }
 
     /**
-     * @param $connection
      * @return string
      */
     public function port()
@@ -77,7 +80,6 @@ class ConversionConfig
     }
 
     /**
-     * @param $connection
      * @return string
      */
     public function database()
@@ -86,7 +88,6 @@ class ConversionConfig
     }
 
     /**
-     * @param $connection
      * @return string
      */
     public function username()
@@ -95,7 +96,6 @@ class ConversionConfig
     }
 
     /**
-     * @param $connection
      * @return string
      */
     public function password()
@@ -115,7 +115,6 @@ class ConversionConfig
     }
 
     /**
-     * @param $connection
      * @return string
      */
     public function tables()
@@ -128,7 +127,14 @@ class ConversionConfig
     }
 
     /**
-     * @param $connection
+     * @return string
+     */
+    public function outputPath()
+    {
+        return $this->app->basePath().DIRECTORY_SEPARATOR.trim($this->conversionConfig['outputPath'], DIRECTORY_SEPARATOR);
+    }
+
+    /**
      * @return array
      */
     public function extraOptions()

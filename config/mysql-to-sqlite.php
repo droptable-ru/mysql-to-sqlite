@@ -51,7 +51,10 @@ return [
             // Any additional parameters to pass to mysqldump
             'mysqldumpOptions' => [
                 '--no-data'
-            ]
+            ],
+
+            // The output path for this conversion, relative to your app's base directory
+            'outputPath' => 'storage/default.sqlite',
         ]
     ]
 ];
